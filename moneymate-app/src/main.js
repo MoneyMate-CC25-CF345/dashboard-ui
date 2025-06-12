@@ -33,7 +33,18 @@ function router() {
   // 4. Perbarui status 'active' di link sidebar
   updateActiveLink(path);
 
-  // 5. Tambahkan event listener yang spesifik untuk halaman yang baru dirender
+  // 5. PASANG ULANG EVENT LISTENER SETELAH RENDER
+  // Listener untuk toggle sidebar (sekarang ada di sini)
+  const toggleBtn = document.getElementById('toggle-sidebar-btn');
+  const dashboardContainer = document.getElementById('dashboard-container');
+  if (toggleBtn && dashboardContainer) {
+    toggleBtn.addEventListener('click', () => {
+      dashboardContainer.classList.toggle('sidebar-collapsed');
+    });
+  }
+
+
+  // 6. Tambahkan event listener yang spesifik untuk halaman yang baru dirender
   addPageSpecificEventListeners(path);
 }
 
@@ -76,14 +87,7 @@ function initializeApp() {
       <main class="main-content"></main> </div>
   `;
 
-  // Listener global yang tidak bergantung pada halaman (seperti toggle sidebar)
-  const toggleBtn = document.getElementById('toggle-sidebar-btn'); // Ini ada di dalam sidebar
-  const dashboardContainer = document.getElementById('dashboard-container');
-  if(toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      dashboardContainer.classList.toggle('sidebar-collapsed');
-    });
-  }
+  
 }
 
 // --- MENJALANKAN APLIKASI ---
