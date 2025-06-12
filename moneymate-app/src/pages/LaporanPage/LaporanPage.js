@@ -9,14 +9,14 @@ export function createLaporanPage() {
         <button class="toggle-btn active" data-view="pengeluaran">
             <i class="fa-solid fa-arrow-up"></i> Pengeluaran
         </button>
-        <button class="toggle-btn" data-view="penghasilan">
-            <i class="fa-solid fa-arrow-down"></i> Penghasilan
+        <button class="toggle-btn" data-view="pemasukan">
+            <i class="fa-solid fa-arrow-down"></i> Pemasukan
         </button>
       </div>
 
       <div class="report-content" data-content-view="pengeluaran">
         <div class="chart-container">
-          <div class="donut-chart" style="--grad-1: var(--primary-green); --val-1: 95%;">
+          <div class="donut-chart" style="background: conic-gradient(var(--light-grey) 0% 5%, var(--text-red) 5% 100%);">
             <div class="chart-center">
               <span>Pengeluaran</span>
               <strong>Rp. 15.000</strong>
@@ -35,18 +35,18 @@ export function createLaporanPage() {
         </div>
       </div>
 
-      <div class="report-content hidden" data-content-view="penghasilan">
+      <div class="report-content hidden" data-content-view="pemasukan">
         <div class="chart-container">
-          <div class="donut-chart" style="--grad-1: var(--text-green); --val-1: 100%;">
+          <div class="donut-chart" style="background: conic-gradient(var(--text-green) 0% 100%);">
             <div class="chart-center">
-              <span>Penghasilan</span>
+              <span>Pemasukan</span>
               <strong>Rp. 30.000</strong>
             </div>
           </div>
         </div>
         <div class="list-container">
            <div class="report-list-item">
-            <div class="item-detail"><div class="item-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><span>Upah</span></div>
+            <div class="item-detail"><div class="item-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div><span>Gaji</span></div>
             <span class="item-amount text-green">Rp. 30.000</span>
           </div>
         </div>
