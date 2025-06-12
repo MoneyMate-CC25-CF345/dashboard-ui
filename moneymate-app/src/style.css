@@ -1,0 +1,44 @@
+/* src/style.css */
+
+/* Variabel warna dan gaya global */
+:root {
+    --primary-green: #84a59d;
+    --dark-grey: #333;
+    --light-grey: #f5f5f5;
+    --border-grey: #e0e0e0;
+    --text-color: #555;
+    --text-green: #2a9d8f;
+    --text-red: #e76f51;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --sidebar-bg: #ffffff;
+    --container-bg: #e9ecef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--container-bg);
+}
+
+/* Layout utama aplikasi */
+#app {
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    transition: grid-template-columns 0.3s ease-in-out;
+}
+
+/* Style untuk container saat sidebar tertutup */
+.dashboard-container.sidebar-collapsed {
+    grid-template-columns: 88px 1fr;
+}
