@@ -28,8 +28,8 @@
 }
 
 .transaction-header {
-    color: #a0a0a0;
-    font-weight: 500;
+    color: black;
+    font-weight: 800;
     border-bottom: 1px solid var(--border-grey);
     padding-bottom: 10px;
 }
@@ -63,7 +63,8 @@
 }
 
 .transaction-category {
-    color: var(--text-color);
+    color: black;
+    font-weight: 500;
 }
 
 .transaction-amount {
