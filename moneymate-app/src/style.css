@@ -34,14 +34,15 @@ body {
 .dashboard-container {
     display: grid;
     grid-template-columns: 260px 1fr;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
     transition: grid-template-columns 0.3s ease-in-out;
 }
 
 .main-content {
     padding: 20px 40px;
     background-color: var(--bg-color);
-    overflow-x: auto; /* Handle overflow if screen is too small */
+    overflow-y: auto; /* Handle overflow if screen is too small */
 }
 
 /* Style untuk container saat sidebar tertutup */
