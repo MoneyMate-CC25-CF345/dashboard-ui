@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoneyMate - Dashboard</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="dashboard-container" class="dashboard-container">
+        
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://i.ibb.co/6rCgS1v/logo-placeholder.png" alt="MoneyMate Logo" class="logo">
+                <span class="logo-text">MONEYMATE</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#" class="active"><i class="fa-solid fa-book-bookmark"></i> Buku Catatan</a></li>
+                <li><a href="#"><i class="fa-solid fa-wallet"></i> Dompet</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-alt"></i> Laporan</a></li>
+                <li><a href="#"><i class="fa-solid fa-plus-circle"></i> Lainnya</a></li>
+                <li><a href="#"><i class="fa-solid fa-cog"></i> Pengaturan</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <button class="logout-btn">Logout</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            
+            <header class="main-header">
+                <div class="header-left">
+                    <i class="fa-solid fa-bars"></i>
+                    <h2>Buku Bawaan</h2>
+                </div>
+                <div class="header-right">
+                    <i class="fa-solid fa-bell"></i>
+                    <div class="user-profile">
+                        <div class="user-avatar">AS</div>
+                        <span>Ahmad Syahid</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <section class="financial-summary">
+                <h3>Ringkasan Keuangan Anda</h3>
+                <div class="summary-header">
+                    <div class="date-navigator">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span>Juni 2026</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                    <div class="time-toggle">
+                        <button>Mingguan</button>
+                        <button class="active">Bulanan</button>
+                        <button>Tahunan</button>
+                    </div>
+                </div>
+                <div class="summary-cards">
+                    <div class="card">
+                        <div class="card-icon-wrapper"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="card-content">
+                            <p>Total Saldo Akhir</p>
+                            <strong>Rp. 15.000</strong>
+                        </div>
+                    </div>
+                    <div class="card">
+                         <div class="card-icon-wrapper income"><i class="fa-solid fa-arrow-up"></i></div>
+                        <div class="card-content">
+                            <p>Total Penghasilan</p>
+                            <strong class="text-green">Rp. 15.000</strong>
+                        </div>
+                    </div>
+                    <div class="card">
+                         <div class="card-icon-wrapper expense"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="card-content">
+                            <p>Total Pengeluaran</p>
+                            <strong class="text-red">Rp. 15.000</strong>
+                        </div>
+                    </div>
+                    <div class="card visualization-card">
+                        <p>Lihat Grafik</p>
+                        <strong>Visualisasi Data</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="transaction-history">
+                <h3>Riwayat Transaksi</h3>
+                <div class="transaction-list">
+                    <div class="transaction-header">
+                        <span>Deskripsi</span>
+                        <span>Kategori</span>
+                        <span>Jumlah</span>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-detail">
+                            <div class="transaction-icon"><i class="fa-solid fa-utensils"></i></div>
+                            <span>Makanan</span>
+                        </div>
+                        <div class="transaction-category">Pengeluaran</div>
+                        <div class="transaction-amount text-red">Rp. 15.000</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-detail">
+                            <div class="transaction-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                            <span>Bahan Bakar</span>
+                        </div>
+                        <div class="transaction-category">Pengeluaran</div>
+                        <div class="transaction-amount text-red">Rp. 15.000</div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-detail">
+                            <div class="transaction-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                            <span>Upah</span>
+                        </div>
+                        <div class="transaction-category">Pemasukan</div>
+                        <div class="transaction-amount text-green">Rp. 15.000</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

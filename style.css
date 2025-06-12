@@ -1,0 +1,320 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-green: #84a59d;
+    --dark-grey: #333;
+    --light-grey: #f5f5f5;
+    --border-grey: #e0e0e0;
+    --text-color: #555;
+    --text-green: #2a9d8f;
+    --text-red: #e76f51;
+    --bg-color: #f8f9fa;
+    --white: #ffffff;
+    --sidebar-bg: #ffffff;
+    --container-bg: #e9ecef;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--container-bg);
+}
+
+/* --- Main Layout Container --- */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- 1. Sidebar (Navigasi Kiri) --- */
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--border-grey);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-grey);
+}
+
+.sidebar-menu {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-menu li a i {
+    margin-right: 15px;
+    width: 20px; /* Agar ikon sejajar */
+    text-align: center;
+}
+
+.sidebar-menu li a:hover {
+    background-color: var(--light-grey);
+}
+
+.sidebar-menu li a.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #6d8c84;
+}
+
+/* --- 2. Main Content (Konten Utama) --- */
+.main-content {
+    flex-grow: 1;
+    padding: 20px 40px;
+    background-color: var(--bg-color);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-left h2 {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-right .fa-bell {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-red);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+/* --- Financial Summary Section --- */
+.financial-summary, .transaction-history {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: var(--dark-grey);
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.date-navigator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.date-navigator i {
+    cursor: pointer;
+}
+
+.time-toggle button {
+    padding: 8px 20px;
+    border: 1px solid var(--border-grey);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.time-toggle button.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--light-grey);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3;
+    color: var(--dark-grey);
+    font-size: 1.2rem;
+}
+
+.card-icon-wrapper.income { background-color: #e0f2f1; color: var(--text-green); }
+.card-icon-wrapper.expense { background-color: #fce4ec; color: var(--text-red); }
+
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.card-content strong {
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+}
+
+.text-green { color: var(--text-green) !important; }
+.text-red { color: var(--text-red) !important; }
+
+.visualization-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-grey);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* --- Transaction History Section --- */
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.transaction-header, .transaction-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    padding: 15px;
+}
+
+.transaction-header {
+    color: #a0a0a0;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border-grey);
+    padding-bottom: 10px;
+}
+
+.transaction-header span:last-child,
+.transaction-amount {
+    text-align: right;
+}
+
+.transaction-item {
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.transaction-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-grey);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.transaction-category {
+    color: var(--text-color);
+}
+
+.transaction-amount {
+    font-weight: 600;
+}
