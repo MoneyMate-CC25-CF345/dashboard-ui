@@ -1,4 +1,6 @@
-/* src/pages/LaporanPage/LaporanPage.css */
+.hidden {
+    display: none !important;
+}
 
 .laporan-page-container {
     display: flex;

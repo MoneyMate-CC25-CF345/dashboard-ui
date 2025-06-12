@@ -77,18 +77,27 @@ function addPageSpecificEventListeners(path) {
   }
   
    // Tambahkan listener untuk tombol toggle di halaman laporan pemasukan dan pengeluaran
-   if (path === '/laporan') {
+    if (path === '/laporan') {
     const toggleButtons = document.querySelectorAll('.report-toggles .toggle-btn');
+    const allContentViews = document.querySelectorAll('.report-content');
     
     toggleButtons.forEach(button => {
       button.addEventListener('click', (event) => {
-        // Hapus kelas 'active' dari semua tombol
-        toggleButtons.forEach(btn => btn.classList.remove('active'));
-        // Tambahkan kelas 'active' ke tombol yang diklik
-        event.currentTarget.classList.add('active');
+        const clickedButton = event.currentTarget;
+        const viewToShow = clickedButton.dataset.view;
 
-        // Untuk saat ini, kita hanya mengubah gaya tombolnya.
-        // Logika untuk mengubah konten akan ditambahkan berikutnya.
+        // 1. Update active tombol
+        toggleButtons.forEach(btn => btn.classList.remove('active'));
+        clickedButton.classList.add('active');
+
+        // 2. Sembunyikan konten yang tidak aktif
+        allContentViews.forEach(view => view.classList.add('hidden'));
+
+        // 3. Tampilkan konten yang sesuai
+        const contentViewToShow = document.querySelector(`.report-content[data-content-view="${viewToShow}"]`);
+        if (contentViewToShow) {
+          contentViewToShow.classList.remove('hidden');
+        }
       });
     });
   }
