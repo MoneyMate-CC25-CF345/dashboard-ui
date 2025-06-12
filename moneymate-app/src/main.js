@@ -1,17 +1,16 @@
-// src/main.js
-
 import './style.css'
-import { createSidebar } from './components/Sidebar/Sidebar.js'
+import { createSidebar } from './components/Sidebar/sidebar.js'
 import { createHeader } from './components/Header/Header.js'
 import { createFinancialSummary } from './components/FinancialSummary/FinancialSummary.js'
 import { createTransactionHistory } from './components/TransactionHistory/TransactionHistory.js'
+// 1. Impor komponen halaman baru kita
+import { createDompetPage } from './pages/DompetPage/DompetPage.js'
 
 // --- KONTEN UNTUK SETIAP HALAMAN ---
-// Kita definisikan konten untuk setiap "path" di sini.
-// Ini membuat router kita bersih dan mudah dikelola.
 const pages = {
   '/': () => createHeader() + createFinancialSummary() + createTransactionHistory(),
-  '/dompet': () => createHeader() + `<h2>Halaman Dompet</h2><p>Konten untuk dompet akan kita buat di sini.</p>`,
+  // 2. Ganti placeholder dengan fungsi komponen yang sebenarnya
+  '/dompet': () => createHeader() + createDompetPage(), 
   '/laporan': () => createHeader() + `<h2>Halaman Laporan</h2>`,
   '/lainnya': () => createHeader() + `<h2>Halaman Lainnya</h2>`,
   '/pengaturan': () => createHeader() + `<h2>Halaman Pengaturan</h2>`
@@ -27,7 +26,9 @@ function router() {
   if (!mainContent) return; // Keluar jika elemen tidak ditemukan
 
   // 3. Render konten yang sesuai dari object 'pages'. Jika path tidak ada, render halaman utama.
-  mainContent.innerHTML = pages[path] || pages['/'];
+  // BENAR: Tambahkan () untuk mengeksekusi fungsi dan mendapatkan hasil HTML-nya
+  const pageRenderer = pages[path] || pages['/'];
+  mainContent.innerHTML = pageRenderer(); 
 
   // 4. Perbarui status 'active' di link sidebar
   updateActiveLink(path);
