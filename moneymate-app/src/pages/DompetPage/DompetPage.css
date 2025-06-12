@@ -1,0 +1,81 @@
+/* src/pages/DompetPage/DompetPage.css */
+
+.dompet-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Jarak antar bagian */
+}
+
+/* 1. Kartu Aset Bersih */
+.asset-summary-card {
+    background-color: var(--primary-green);
+    color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.asset-summary-card .asset-title {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.asset-summary-card .asset-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.asset-summary-card .asset-detail {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* 2. Ringkasan Pemasukan & Pengeluaran */
+.income-expense-summary {
+    display: grid;
+    /* Gunakan style .card yang sudah ada */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* 3. Daftar Dompet Tunai */
+.wallet-list-section .wallet-group-title {
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+    margin-bottom: 15px;
+}
+
+.wallet-item {
+    background-color: var(--white);
+    padding: 20px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-grey);
+}
+
+.wallet-item-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.wallet-item-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-grey);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.wallet-item-amount {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
