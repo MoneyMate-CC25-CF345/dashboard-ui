@@ -27,7 +27,12 @@
 .logo-mini {
     display: none;
 }
+
 .logo-big {
+    height: auto; /* Atur tinggi logo menyesuaikan width */
+    width: 100%; /* Lebar penuh untuk logo sesuai ukuran*/
+    /* border: 2px solid black; */
+    transition: opacity 0.3s ease-in-out;
     display: block;
 }
 
