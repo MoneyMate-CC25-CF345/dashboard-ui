@@ -3,15 +3,16 @@ import { createSidebar } from './components/Sidebar/sidebar.js'
 import { createHeader } from './components/Header/Header.js'
 import { createFinancialSummary } from './components/FinancialSummary/FinancialSummary.js'
 import { createTransactionHistory } from './components/TransactionHistory/TransactionHistory.js'
-// 1. Impor komponen halaman baru kita
+// Impor komponen halaman 
 import { createDompetPage } from './pages/DompetPage/DompetPage.js'
+import { createLaporanPage } from './pages/LaporanPage/LaporanPage.js'
 
 // --- KONTEN UNTUK SETIAP HALAMAN ---
 const pages = {
   '/': () => createHeader() + createFinancialSummary() + createTransactionHistory(),
   // 2. Ganti placeholder dengan fungsi komponen yang sebenarnya
   '/dompet': () => createHeader() + createDompetPage(), 
-  '/laporan': () => createHeader() + `<h2>Halaman Laporan</h2>`,
+  '/laporan': () => createHeader() + createLaporanPage(),
   '/lainnya': () => createHeader() + `<h2>Halaman Lainnya</h2>`,
   '/pengaturan': () => createHeader() + `<h2>Halaman Pengaturan</h2>`
 };
