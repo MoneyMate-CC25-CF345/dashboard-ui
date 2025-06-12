@@ -41,33 +41,40 @@ body {
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--border-grey);
-    /* Sembunyikan konten yang meluap saat sidebar menyempit */
     overflow: hidden;
-    white-space: nowrap; /* Mencegah teks turun baris */
+    white-space: nowrap; 
 }
 
 .sidebar-header {
     display: flex;
     align-items: center;
+    justify-content: center;     /*  untuk meratakan logo mini saat sidebar tertutup */ 
     margin-bottom: 40px;
-    min-height: 40px; /* Jaga tinggi agar tidak bergeser */
+    min-height: 40px; 
 }
 
-.logo {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    flex-shrink: 0; /* Mencegah logo menyusut */
-}
-
-.logo-text {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--dark-grey);
+.logo-mini {
+    max-height: 40px; /* Atur tinggi maksimal logo */
     transition: opacity 0.3s ease-in-out;
 }
 
+.logo-big {
+    height: auto; /* Atur tinggi logo menyesuaikan width */
+    width: 100%; /* Lebar penuh untuk logo sesuai ukuran*/
+    /* border: 2px solid black; */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.logo-mini {
+    display: none;
+}
+.logo-big {
+    display: block;
+}
+
+
 .sidebar-menu {
+    /* border: 2px solid black; */
     list-style: none;
     flex-grow: 1;
 }
@@ -135,16 +142,21 @@ body {
 
 /* --- GAYA KETIKA SIDEBAR DITUTUP --- */
 .dashboard-container.sidebar-collapsed {
-    /* Lebar sidebar menjadi 88px */
     grid-template-columns: 88px 1fr;
 }
 
-.dashboard-container.sidebar-collapsed .logo-text,
+
 .dashboard-container.sidebar-collapsed .sidebar-menu a span,
 .dashboard-container.sidebar-collapsed .logout-btn span {
-    opacity: 0;
-    width: 0;
-    visibility: hidden;
+    display: none;
+}
+
+.dashboard-container.sidebar-collapsed .logo-big {
+    display: none; 
+}
+
+.dashboard-container.sidebar-collapsed .logo-mini {
+    display: block; 
 }
 
 .dashboard-container.sidebar-collapsed .sidebar-header,
