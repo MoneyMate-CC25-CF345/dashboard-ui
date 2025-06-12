@@ -38,6 +38,12 @@ body {
     transition: grid-template-columns 0.3s ease-in-out;
 }
 
+.main-content {
+    padding: 20px 40px;
+    background-color: var(--bg-color);
+    overflow-x: auto; /* Handle overflow if screen is too small */
+}
+
 /* Style untuk container saat sidebar tertutup */
 .dashboard-container.sidebar-collapsed {
     grid-template-columns: 88px 1fr;
