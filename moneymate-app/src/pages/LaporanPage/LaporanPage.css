@@ -1,0 +1,139 @@
+/* src/pages/LaporanPage/LaporanPage.css */
+
+.laporan-page-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tombol Toggle */
+.report-toggles {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    flex-grow: 1;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid var(--border-grey);
+    background-color: var(--white);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+.toggle-btn:not(.active):hover {
+    background-color: var(--light-grey);
+}
+
+/* Konten Laporan (Layout 2 Kolom) */
+.report-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Kolom Kiri: Chart Placeholder */
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.donut-chart {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    /* Trik membuat chart dengan conic-gradient */
+    background: conic-gradient(
+        var(--light-grey) 0% 5%,
+        var(--primary-green) 5% 100%
+    );
+}
+
+.chart-center {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background-color: var(--white);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-center span {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.chart-center strong {
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+    margin-top: 5px;
+}
+
+/* Kolom Kanan: Daftar Rincian */
+.list-container {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light-grey);
+}
+.report-list-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-detail {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.item-icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-grey);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.item-amount {
+    font-weight: 600;
+}
+.text-red { color: var(--text-red); }
+.text-green { color: var(--text-green); }

@@ -3,7 +3,6 @@
 import './LaporanPage.css';
 
 export function createLaporanPage() {
-  // Kita buat kerangka HTML dasarnya terlebih dahulu
   return `
     <div class="laporan-page-container">
       <div class="report-toggles">
@@ -15,14 +14,46 @@ export function createLaporanPage() {
         </button>
       </div>
 
-      <div class="report-content">
+      <div class="report-content" data-content-view="pengeluaran">
         <div class="chart-container">
-          <p style="text-align:center; padding-top: 50px;">Placeholder untuk Chart</p>
+          <div class="donut-chart" style="--percentage-1: 95%;">
+            <div class="chart-center">
+              <span>Pengeluaran</span>
+              <strong>Rp. 15.000</strong>
+            </div>
+            <div class="chart-label" style="--angle: 45deg;">95%</div>
+            <div class="chart-label" style="--angle: -2.5deg;">5%</div>
+          </div>
         </div>
         <div class="list-container">
-          <p style="text-align:center; padding-top: 50px;">Placeholder untuk Daftar Rincian</p>
+          <div class="report-list-item">
+            <div class="item-detail">
+              <div class="item-icon"><i class="fa-solid fa-utensils"></i></div>
+              <span>Makanan</span>
+            </div>
+            <span class="item-amount text-red">Rp. 15.000</span>
+          </div>
+          <div class="report-list-item">
+            <div class="item-detail">
+              <div class="item-icon"><i class="fa-solid fa-fire-burner"></i></div>
+              <span>Bahan Bakar</span>
+            </div>
+            <span class="item-amount text-red">Rp. 15.000</span>
+          </div>
+          <div class="report-list-item">
+            <div class="item-detail">
+              <div class="item-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <span>Upah</span>
+            </div>
+            <span class="item-amount text-green">Rp. 15.000</span>
+          </div>
         </div>
       </div>
+
+      <div class="report-content" data-content-view="penghasilan" style="display: none;">
+        <p>Konten Laporan Penghasilan</p>
+      </div>
+
     </div>
   `;
 }

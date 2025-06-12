@@ -75,7 +75,24 @@ function addPageSpecificEventListeners(path) {
       });
     });
   }
-  // Nanti kita bisa tambahkan listener untuk halaman lain di sini
+  
+   // Tambahkan listener untuk tombol toggle di halaman laporan pemasukan dan pengeluaran
+   if (path === '/laporan') {
+    const toggleButtons = document.querySelectorAll('.report-toggles .toggle-btn');
+    
+    toggleButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        // Hapus kelas 'active' dari semua tombol
+        toggleButtons.forEach(btn => btn.classList.remove('active'));
+        // Tambahkan kelas 'active' ke tombol yang diklik
+        event.currentTarget.classList.add('active');
+
+        // Untuk saat ini, kita hanya mengubah gaya tombolnya.
+        // Logika untuk mengubah konten akan ditambahkan berikutnya.
+      });
+    });
+  }
+
 }
 
 // --- INISIALISASI APLIKASI ---
