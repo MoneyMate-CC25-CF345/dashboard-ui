@@ -1,0 +1,107 @@
+/* src/components/FinancialSummary/FinancialSummary.css */
+
+.financial-summary {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.financial-summary h3 {
+    margin-bottom: 20px;
+    color: var(--dark-grey);
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; 
+    gap: 10px;
+}
+
+.date-navigator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+}
+
+.date-navigator i {
+    cursor: pointer;
+}
+
+.time-toggle button {
+    padding: 8px 20px;
+    border: 1px solid var(--border-grey);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.time-toggle button.active {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border-color: var(--primary-green);
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--light-grey);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3;
+    color: var(--dark-grey);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.card-icon-wrapper.income { background-color: #e0f2f1; color: var(--text-green); }
+.card-icon-wrapper.expense { background-color: #fce4ec; color: var(--text-red); }
+
+
+.card-content p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.card-content strong {
+    font-size: 1.2rem;
+    color: var(--dark-grey);
+}
+
+/* Kita juga perlu memindahkan style helper text-red dan text-green ke sini */
+/* atau membiarkannya di style.css global jika akan dipakai di banyak tempat. */
+/* Untuk sekarang, kita pindahkan saja. */
+.text-green { color: var(--text-green) !important; }
+.text-red { color: var(--text-red) !important; }
+
+.visualization-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-grey);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
