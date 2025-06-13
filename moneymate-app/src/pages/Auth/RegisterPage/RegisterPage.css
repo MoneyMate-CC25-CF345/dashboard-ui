@@ -1,0 +1,167 @@
+/* src/pages/Auth/RegisterPage/RegisterPage.css */
+
+.register-content-wrapper {
+  width: 100%;
+  max-width: 420px; /* Sedikit lebih lebar untuk form yang lebih panjang */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bagian atas yang berisi form */
+.register-form-container {
+  padding: 30px 30px 20px 30px; /* Padding disesuaikan */
+  text-align: center;
+  color: var(--white);
+}
+
+.register-form-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Grup Input dengan Ikon */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px; /* Padding kiri lebih besar untuk ikon */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+/* Syarat dan Ketentuan */
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  text-align: left;
+  position: relative; 
+  cursor: pointer;
+}
+
+/* Modifikasi checbox, soalnya bawaan browser jelek */
+/* Sembunyikan checkbox asli dari browser */
+.terms-container input[type="checkbox"] {
+  display: none;
+}
+.terms-container label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. membuat kotak checkbox kustoman ku menggunakan ::before */
+.terms-container label::before {
+  content: ''; /* Wajib ada untuk pseudo-element */
+  display: inline-block;
+  
+  /* Atur ukuran sesuai desain */
+  width: 20px; 
+  height: 20px;
+
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  margin-right: 12px; /* Jarak antara kotak dan teks label */
+  transition: all 0.2s;
+}
+
+/* style kotak saat checkbox dicentang */
+.terms-container input[type="checkbox"]:checked + label::before {
+  background-color: var(--white);
+  border-color: var(--white);
+}
+
+/* Buat tanda centang (check mark) pake ::after */
+.terms-container label::after {
+  content: ''; /* Wajib */
+  display: block;
+  position: absolute;
+  
+  /* ngAtur posisi dan ukuran tanda centang */
+  left: 7px;
+  top: 11px; 
+  width: 6px;
+  height: 12px;
+
+  /* membuat bentuk V dengan border alias centang ala ala */
+  border: solid var(--primary-green); /* Warna tanda centang */
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0; /* Sembunyikan secara default */
+  transition: opacity 0.2s;
+}
+
+/* Tampilkan tanda centang saat checkbox dicentang */
+.terms-container input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+
+.terms-container label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Bagian bawah yang berisi tombol */
+.register-actions-container {
+  background-color: var(--white);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-register {
+  background-color: var(--login-btn-color);
+  color: var(--white);
+}
+.btn-register:hover {
+  opacity: 0.9;
+}
+
+.login-link {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+}
