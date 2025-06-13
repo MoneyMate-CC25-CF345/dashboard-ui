@@ -54,7 +54,68 @@
   gap: 10px;
   margin-top: 10px;
   text-align: left;
+  position: relative; 
+  cursor: pointer;
 }
+
+/* Modifikasi checbox, soalnya bawaan browser jelek */
+/* Sembunyikan checkbox asli dari browser */
+.terms-container input[type="checkbox"] {
+  display: none;
+}
+.terms-container label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+}
+
+/* 2. membuat kotak checkbox kustoman ku menggunakan ::before */
+.terms-container label::before {
+  content: ''; /* Wajib ada untuk pseudo-element */
+  display: inline-block;
+  
+  /* Atur ukuran sesuai desain */
+  width: 20px; 
+  height: 20px;
+
+  border: 2px solid var(--white);
+  border-radius: 4px;
+  margin-right: 12px; /* Jarak antara kotak dan teks label */
+  transition: all 0.2s;
+}
+
+/* style kotak saat checkbox dicentang */
+.terms-container input[type="checkbox"]:checked + label::before {
+  background-color: var(--white);
+  border-color: var(--white);
+}
+
+/* Buat tanda centang (check mark) pake ::after */
+.terms-container label::after {
+  content: ''; /* Wajib */
+  display: block;
+  position: absolute;
+  
+  /* ngAtur posisi dan ukuran tanda centang */
+  left: 7px;
+  top: 11px; 
+  width: 6px;
+  height: 12px;
+
+  /* membuat bentuk V dengan border alias centang ala ala */
+  border: solid var(--primary-green); /* Warna tanda centang */
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  opacity: 0; /* Sembunyikan secara default */
+  transition: opacity 0.2s;
+}
+
+/* Tampilkan tanda centang saat checkbox dicentang */
+.terms-container input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
 
 .terms-container label {
   font-size: 0.8rem;
