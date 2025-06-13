@@ -91,9 +91,9 @@ body {
  /* OVERRIDE LAYOUT REGISTRASI */
 
 .auth-layout.layout-register .auth-bg-top {
-  height: 70vh; /* 70% tinggi layar */
+  height: 75vh; /* 70% tinggi layar */
 }
 
 .auth-layout.layout-register .auth-bg-bottom {
-  height: 30vh; /* 30% tinggi layar */
+  height: 25vh; /* 30% tinggi layar */
 }

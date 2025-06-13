@@ -1,0 +1,106 @@
+/* src/pages/Auth/RegisterPage/RegisterPage.css */
+
+.register-content-wrapper {
+  width: 100%;
+  max-width: 420px; /* Sedikit lebih lebar untuk form yang lebih panjang */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bagian atas yang berisi form */
+.register-form-container {
+  padding: 30px 30px 20px 30px; /* Padding disesuaikan */
+  text-align: center;
+  color: var(--white);
+}
+
+.register-form-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Grup Input dengan Ikon */
+.input-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 15px 15px 45px; /* Padding kiri lebih besar untuk ikon */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.input-group input::placeholder {
+  color: #888;
+}
+
+/* Syarat dan Ketentuan */
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.terms-container label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+/* Bagian bawah yang berisi tombol */
+.register-actions-container {
+  background-color: var(--white);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-register {
+  background-color: var(--login-btn-color);
+  color: var(--white);
+}
+.btn-register:hover {
+  opacity: 0.9;
+}
+
+.login-link {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.login-link a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+}
