@@ -7,8 +7,8 @@ import { createTransactionHistory } from './components/TransactionHistory/Transa
 import { createDompetPage } from './pages/DompetPage/DompetPage.js'
 import { createLaporanPage } from './pages/LaporanPage/LaporanPage.js'
 
-// Impor untuk Layout Autentikasi (akan kita buat nanti)
-// import { createLoginPage } from './pages/Auth/LoginPage.js' 
+import { createLoginPage } from './pages/Auth/LoginPage/LoginPage.js'
+
 
 const appElement = document.getElementById('app');
 
@@ -22,9 +22,8 @@ const appPages = {
   // Tambahkan halaman aplikasi lain di sini
 };
 
-// 2. Konten untuk Halaman AUTENTIKASI (menggunakan placeholder)
 const authPages = {
-  '/login': () => `<h1>Halaman Login</h1><p>Form login akan ada di sini.</p>`,
+  '/login': createLoginPage, // Langsung panggil fungsinya
   '/register': () => `<h1>Halaman Registrasi</h1>`,
   '/lupa-password': () => `<h1>Halaman Lupa Password</h1>`,
   '/reset-password': () => `<h1>Halaman Reset Password</h1>`
@@ -56,19 +55,16 @@ function renderAppLayout(path) {
 }
 
 /**
- * Merender layout sederhana untuk halaman autentikasi.
+ * Merender layout untuk halaman autentikasi.
  */
 function renderAuthLayout(path) {
-  // Bangun kerangka HTML untuk layout autentikasi
-  appElement.innerHTML = `
-    <div class="auth-container">
-      </div>
-  `;
-  
-  // Isi konten sesuai halaman autentikasi yang diminta
+  appElement.innerHTML = `<div class="auth-container"></div>`;
   const authContainer = document.querySelector('.auth-container');
   const pageRenderer = authPages[path];
-  authContainer.innerHTML = pageRenderer();
+  // Pastikan pageRenderer ada sebelum dipanggil
+  if (pageRenderer) {
+    authContainer.innerHTML = pageRenderer();
+  }
 }
 
 

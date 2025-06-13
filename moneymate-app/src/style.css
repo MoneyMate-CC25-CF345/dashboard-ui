@@ -13,6 +13,8 @@
     --white: #ffffff;
     --sidebar-bg: #ffffff;
     --container-bg: #e9ecef;
+    --login-btn-color: #83b264;
+
 }
 
 * {
@@ -48,4 +50,16 @@ body {
 /* Style untuk container saat sidebar tertutup */
 .dashboard-container.sidebar-collapsed {
     grid-template-columns: 88px 1fr;
+}
+
+/* Style untuk bagian Autentikasi */
+
+.auth-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--bg-color);
 }
