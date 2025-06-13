@@ -8,6 +8,7 @@ import { createDompetPage } from './pages/DompetPage/DompetPage.js'
 import { createLaporanPage } from './pages/LaporanPage/LaporanPage.js'
 
 import { createLoginPage } from './pages/Auth/LoginPage/LoginPage.js'
+import { createRegisterPage } from './pages/Auth/RegisterPage/RegisterPage.js'
 
 
 const appElement = document.getElementById('app');
@@ -24,7 +25,7 @@ const appPages = {
 
 const authPages = {
   '/login': createLoginPage, // Langsung panggil fungsinya
-  '/register': () => `<h1>Halaman Registrasi</h1>`,
+  '/register': createRegisterPage,
   '/lupa-password': () => `<h1>Halaman Lupa Password</h1>`,
   '/reset-password': () => `<h1>Halaman Reset Password</h1>`
 };
@@ -53,16 +54,20 @@ function renderAppLayout(path) {
 
 // Merender layout untuk halaman autentikasi.
 function renderAuthLayout(path) {
+  // Tentukan kelas layout berdasarkan path
+  let layoutClass = 'layout-login'; // Default
+  if (path === '/register') {
+    layoutClass = 'layout-register';
+  }
   appElement.innerHTML = `
-    <div class="auth-layout">
+    <div class="auth-layout ${layoutClass}">
       <div class="auth-bg-top"></div>
       <div class="auth-bg-bottom"></div>
-
-      <div class="auth-content-container">
-        </div>
+      <div class="auth-content-container"></div>
     </div>
   `;
-
+  
+  // Render konten halaman ke dalam container
   const authContentContainer = document.querySelector('.auth-content-container');
   const pageRenderer = authPages[path];
   if (pageRenderer) {
