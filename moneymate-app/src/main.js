@@ -32,8 +32,7 @@ const authPages = {
 // --- FUNGSI RENDER LAYOUT ---
 
 /**
- * Merender layout utama aplikasi (dengan sidebar dan header)
- * dan mengisi kontennya sesuai path.
+ *Merender layout utama aplikasi (dengan sidebar dan header)
  */
 function renderAppLayout(path) {
   // Bangun kerangka HTML untuk layout aplikasi
@@ -43,8 +42,6 @@ function renderAppLayout(path) {
       <main class="main-content"></main>
     </div>
   `;
-
-  // Isi konten utama sesuai halaman yang diminta
   const mainContent = document.querySelector('.main-content');
   const pageRenderer = appPages[path] || appPages['/'];
   mainContent.innerHTML = pageRenderer();
@@ -54,16 +51,22 @@ function renderAppLayout(path) {
   updateActiveLink(path);
 }
 
-/**
- * Merender layout untuk halaman autentikasi.
- */
+// Merender layout untuk halaman autentikasi.
 function renderAuthLayout(path) {
-  appElement.innerHTML = `<div class="auth-container"></div>`;
-  const authContainer = document.querySelector('.auth-container');
+  appElement.innerHTML = `
+    <div class="auth-layout">
+      <div class="auth-bg-top"></div>
+      <div class="auth-bg-bottom"></div>
+
+      <div class="auth-content-container">
+        </div>
+    </div>
+  `;
+
+  const authContentContainer = document.querySelector('.auth-content-container');
   const pageRenderer = authPages[path];
-  // Pastikan pageRenderer ada sebelum dipanggil
   if (pageRenderer) {
-    authContainer.innerHTML = pageRenderer();
+    authContentContainer.innerHTML = pageRenderer();
   }
 }
 

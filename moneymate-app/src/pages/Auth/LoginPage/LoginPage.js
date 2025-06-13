@@ -1,10 +1,13 @@
+// src/pages/Auth/LoginPage/LoginPage.js
+
 import './LoginPage.css';
 
 export function createLoginPage() {
+  // Strukturnya sekarang jauh lebih sederhana
   return `
-    <div class="login-card">
+    <div class="login-content-wrapper">
       
-      <div class="login-card-top">
+      <div class="login-form-container">
         <h1>WELCOME</h1>
         <form class="login-form">
           <input type="email" placeholder="Email" required>
@@ -13,8 +16,8 @@ export function createLoginPage() {
         </form>
       </div>
 
-      <div class="login-card-bottom">
-        <button type="submit" class="btn btn-primary">Masuk</button>
+      <div class="login-actions-container">
+        <button type="submit" class="btn btn-login">Masuk</button>
         <button type="button" class="btn btn-secondary">
           <img src="/google-logo.png" alt="Google" />
           Masuk dengan Google

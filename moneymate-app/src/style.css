@@ -54,12 +54,36 @@ body {
 
 /* Style untuk bagian Autentikasi */
 
-.auth-container {
+.auth-layout {
+  position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden; /* Mencegah scroll jika ada yang meluap */
+}
+
+.auth-bg-top {
+  height: 55vh; /* 50% tinggi layar */
+  background-image: url('/bg-bubble.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-bg-bottom {
+  height: 50vh; /* 50% tinggi layar */
+  background-color: var(--white);
+}
+
+.auth-content-container {
+  /* Trik untuk memposisikan form di tengah, di atas latar belakang */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Gunakan flexbox untuk memusatkan isinya (yaitu, form login) */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: var(--bg-color);
 }

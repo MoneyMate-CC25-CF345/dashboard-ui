@@ -1,24 +1,23 @@
 /* src/pages/Auth/LoginPage/LoginPage.css */
 
-.login-card {
+.login-content-wrapper {
   width: 100%;
   max-width: 400px;
-  background-color: var(--white);
-  border-radius: 16px;
-  overflow: hidden; /* Penting untuk menjaga sudut rounded */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
 }
 
-.login-card-top {
-  background-color: var(--primary-green);
-  background-image: url('/bg-bubble.png');
+/* Bagian atas yang berisi form */
+.login-form-container {
   background-size: cover;
+  background-position: center;
   padding: 40px 30px;
-  color: var(--white);
   text-align: center;
+  color: var(--white);
+  font-weight: 500;
 }
 
-.login-card-top h1 {
+.login-form-container h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -47,11 +46,16 @@
   opacity: 0.9;
 }
 
-.login-card-bottom {
+
+/* Bagian bawah yang berisi tombol */
+.login-actions-container {
+  background-color: var(--white);
   padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 15px;
+  border-bottom-left-radius: 16px; /* Memberi sudut rounded di bagian bawah */
+  border-bottom-right-radius: 16px;
 }
 
 .btn {
@@ -65,11 +69,12 @@
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background-color: var(--primary-green);
+/* Tombol login dengan warna baru */
+.btn-login {
+  background-color: var(--login-btn-color);
   color: var(--white);
 }
-.btn-primary:hover {
+.btn-login:hover {
   opacity: 0.9;
 }
 
@@ -94,6 +99,7 @@
   text-align: center;
   color: var(--text-color);
   font-size: 0.9rem;
+  margin-top: 10px;
 }
 
 .register-link a {
